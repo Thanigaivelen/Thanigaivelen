@@ -7,6 +7,16 @@
 I build AI-powered products, polished user experiences, and full-stack systems that turn rough ideas into usable software.
 
 <p>
+  <a href="https://github.com/Thanigaivelen">GitHub</a>
+  |
+  <a href="https://www.linkedin.com/in/thanigaivelen06122002">LinkedIn</a>
+  |
+  <a href="https://portfolio-vercel-tau-seven.vercel.app/">Portfolio</a>
+  |
+  <a href="mailto:thanigaivelen2002@gmail.com">Email</a>
+</p>
+
+<p>
   <img src="https://img.shields.io/badge/Focus-AI%20Products-111827?style=for-the-badge&logo=openai&logoColor=white" alt="AI Products" />
   <img src="https://img.shields.io/badge/Stack-Full--Stack%20TypeScript-0F172A?style=for-the-badge&logo=typescript&logoColor=white" alt="Full-Stack TypeScript" />
   <img src="https://img.shields.io/badge/Mindset-Product%20%2B%20Engineering-1E293B?style=for-the-badge&logo=github&logoColor=white" alt="Product and Engineering" />
@@ -31,13 +41,26 @@ I care about products that feel **simple on the surface** and **solid underneath
 
 ---
 
+## GitHub Stats
+
+<div align="center">
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=Thanigaivelen&show_icons=true&include_all_commits=true&rank_icon=github&theme=tokyonight&hide_border=true&bg_color=00000000" alt="GitHub stats" />
+  <img height="170" src="https://streak-stats.demolab.com?user=Thanigaivelen&theme=tokyonight&hide_border=true&background=00000000" alt="GitHub streak" />
+</div>
+
+<div align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Thanigaivelen&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000" alt="Top languages" />
+</div>
+
+---
+
 ## What I Build
 
 <table>
   <tr>
     <td width="50%" valign="top">
       <h3>AI Product Experiences</h3>
-      <p>I build AI features that fit real product flows — not isolated demos. I care about prompt design, evaluation loops, usability, and making AI outputs feel dependable inside the interface.</p>
+      <p>I build AI features that fit real product flows, not isolated demos. I care about prompt design, evaluation loops, usability, and making AI outputs feel dependable inside the interface.</p>
     </td>
     <td width="50%" valign="top">
       <h3>Full-Stack Product Systems</h3>
@@ -51,7 +74,7 @@ I care about products that feel **simple on the surface** and **solid underneath
     </td>
     <td width="50%" valign="top">
       <h3>Interfaces With Strong Product Taste</h3>
-      <p>I value clarity, hierarchy, and usability. Good software should not only work — it should also feel deliberate and easy to trust.</p>
+      <p>I value clarity, hierarchy, and usability. Good software should not only work, it should also feel deliberate and easy to trust.</p>
     </td>
   </tr>
 </table>
@@ -59,6 +82,14 @@ I care about products that feel **simple on the surface** and **solid underneath
 ---
 
 ## Tech I Work With
+
+<div align="center">
+  <img src="./stack-orbit.svg" width="100%" alt="Animated tech stack orbit" />
+</div>
+
+<p align="center">
+  A more visual snapshot of the stack I work with most often across product, platform, and AI workflows.
+</p>
 
 ### Frontend
 ![React](https://img.shields.io/badge/React-111827?style=flat-square&logo=react&logoColor=61DAFB)
@@ -75,14 +106,15 @@ I care about products that feel **simple on the surface** and **solid underneath
 
 ### AI + Automation
 ![OpenAI](https://img.shields.io/badge/OpenAI-111827?style=flat-square&logo=openai&logoColor=white)
-![LangGraph](https://img.shields.io/badge/LangGraph-111827?style=flat-square&logo=langchain&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-111827?style=flat-square&logo=langchain&logoColor=white)
 ![Prompt Engineering](https://img.shields.io/badge/Prompt%20Systems-111827?style=flat-square&logo=markdown&logoColor=white)
 ![Workflow Design](https://img.shields.io/badge/Automation%20Workflows-111827?style=flat-square&logo=gitlab&logoColor=white)
 
 ### Tools
 ![Git](https://img.shields.io/badge/Git-111827?style=flat-square&logo=git&logoColor=F05032)
 ![Docker](https://img.shields.io/badge/Docker-111827?style=flat-square&logo=docker&logoColor=2496ED)
-![VS Code](https://img.shields.io/badge/VS%20Code-111827?style=flat-square&logo=visual-studio-code&logoColor=007ACC)
+![AWS](https://img.shields.io/badge/AWS-111827?style=flat-square&logo=amazonaws&logoColor=FF9900)
+![Postman](https://img.shields.io/badge/Postman-111827?style=flat-square&logo=postman&logoColor=FF6C37)
 
 ---
 
@@ -110,7 +142,7 @@ flowchart LR
 
 ## Engineering Principles
 
-- **Build for real usage** — not just for demos
+- **Build for real usage** - not just for demos
 - **Keep the user experience clear** even when the system behind it is complex
 - **Prefer simple architecture first** and add complexity only when it earns its place
 - **Care about product outcomes**, not just technical output
@@ -128,6 +160,8 @@ flowchart LR
 
 ## Connect
 
-- **Email:** [thanigaivelen2002@gmail.com](mailto:thanigaivelen2002@gmail.com)
+- **Portfolio:** https://portfolio-vercel-tau-seven.vercel.app/
+- **LinkedIn:** https://www.linkedin.com/in/thanigaivelen06122002
+- **Email:** thanigaivelen2002@gmail.com
 
 If you're building something thoughtful at the intersection of **product, AI, and engineering**, I'm always interested in good problems.
