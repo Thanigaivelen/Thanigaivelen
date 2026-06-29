@@ -44,7 +44,7 @@
   <g>
     <text x="74" y="54" class="eyebrow">PROFILE SIGNALS</text>
     <text x="74" y="92" class="title">GitHub Signals</text>
-    <text x="74" y="118" class="subtitle">Auto-generated from Thanigaivelen's public GitHub activity</text>
+    <text x="74" y="118" class="subtitle">Auto-generated from Bobby's public GitHub activity</text>
     <text x="928" y="54" class="status">UPDATED JUN 29, 2026</text>
   </g>
 
@@ -56,7 +56,7 @@
 
   <g>
     <text x="104" y="182" class="label">TOTAL CONTRIBUTIONS</text>
-    <text x="104" y="234" class="value">1,904</text>
+    <text x="104" y="234" class="value">1,907</text>
     <text x="104" y="262" class="caption">Built over time, not as a vanity metric</text>
     <text x="104" y="286" class="meta">Since Sep 4, 2021</text>
     <text x="104" y="304" class="fine">CONSISTENT OUTPUT</text>
@@ -84,9 +84,9 @@
 
   <g>
     <text x="830" y="182" class="label">BEST RUN</text>
-    <text x="830" y="234" class="value">8</text>
+    <text x="830" y="234" class="value">7</text>
     <text x="830" y="262" class="caption">Strongest streak on record</text>
-    <text x="830" y="286" class="meta">Dec 11, 2025 - Dec 18, 2025</text>
+    <text x="830" y="286" class="meta">Dec 12, 2025 - Dec 18, 2025</text>
     <text x="830" y="304" class="fine">STRONGEST WINDOW</text>
     <path d="M 754 246 C 790 232 842 236 888 206 C 932 178 980 182 1038 146" class="lineMint"/>
     <circle r="5" fill="#20C997" filter="url(#softGlow)">
