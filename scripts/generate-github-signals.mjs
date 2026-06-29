@@ -23,7 +23,13 @@ async function main() {
   console.log(`Updated ${outputFile} for ${username}`);
 }
 
-async function fetchGitHubSignals({ username, token, since }) {
+export async function fetchGitHubSignals({
+  username,
+  token,
+  since,
+  until = new Date().toISOString(),
+  fetchImpl = fetch,
+}) {
   if (!token) {
     throw new Error("GITHUB_TOKEN is required unless GITHUB_SIGNALS_SAMPLE=1 is set.");
   }
@@ -48,38 +54,49 @@ async function fetchGitHubSignals({ username, token, since }) {
     }
   `;
 
-  const response = await fetch("https://api.github.com/graphql", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-      "User-Agent": "github-signals-generator",
-    },
-    body: JSON.stringify({
-      query,
-      variables: {
-        login: username,
-        from: `${since}T00:00:00Z`,
-        to: new Date().toISOString(),
+  const calendars = [];
+  let user = null;
+
+  for (const window of buildQueryWindows({ since, until })) {
+    const response = await fetchImpl("https://api.github.com/graphql", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+        "User-Agent": "github-signals-generator",
       },
-    }),
-  });
+      body: JSON.stringify({
+        query,
+        variables: {
+          login: username,
+          from: window.from,
+          to: window.to,
+        },
+      }),
+    });
 
-  if (!response.ok) {
-    throw new Error(`GitHub GraphQL request failed with ${response.status}.`);
+    if (!response.ok) {
+      throw new Error(`GitHub GraphQL request failed with ${response.status}.`);
+    }
+
+    const payload = await response.json();
+
+    if (payload.errors?.length) {
+      throw new Error(payload.errors.map((error) => error.message).join("; "));
+    }
+
+    if (!payload.data?.user) {
+      throw new Error(`GitHub user "${username}" was not found.`);
+    }
+
+    user ??= {
+      login: payload.data.user.login,
+      name: payload.data.user.name,
+    };
+    calendars.push(payload.data.user.contributionsCollection.contributionCalendar);
   }
 
-  const payload = await response.json();
-
-  if (payload.errors?.length) {
-    throw new Error(payload.errors.map((error) => error.message).join("; "));
-  }
-
-  if (!payload.data?.user) {
-    throw new Error(`GitHub user "${username}" was not found.`);
-  }
-
-  return payload.data;
+  return buildPayloadFromCalendars({ user, calendars });
 }
 
 function buildSamplePayload({ username, since }) {
@@ -141,6 +158,72 @@ function chunkDaysIntoWeeks(days) {
   }
 
   return weeks;
+}
+
+export function buildQueryWindows({ since, until }) {
+  const start = startOfUtcDay(since);
+  const end = startOfUtcDay(until);
+
+  if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) {
+    throw new Error("Invalid date range provided for GitHub signals generation.");
+  }
+
+  if (start > end) {
+    throw new Error("The GitHub signals start date must be on or before the end date.");
+  }
+
+  const windows = [];
+
+  // GitHub's contributionsCollection API rejects ranges larger than one calendar year.
+  for (let windowStart = new Date(start); windowStart <= end;) {
+    const windowEnd = endOfApiWindow(windowStart, end);
+    windows.push({
+      from: windowStart.toISOString(),
+      to: windowEnd.toISOString(),
+    });
+
+    windowStart = addUtcDays(windowEnd, 1);
+  }
+
+  return windows;
+}
+
+function buildPayloadFromCalendars({ user, calendars }) {
+  const mergedDays = new Map();
+
+  for (const calendar of calendars) {
+    for (const week of calendar.weeks) {
+      for (const day of week.contributionDays) {
+        const existing = mergedDays.get(day.date);
+
+        if (existing) {
+          existing.contributionCount += day.contributionCount;
+          continue;
+        }
+
+        mergedDays.set(day.date, {
+          contributionCount: day.contributionCount,
+          date: day.date,
+        });
+      }
+    }
+  }
+
+  const days = [...mergedDays.values()].sort((left, right) => left.date.localeCompare(right.date));
+  const totalContributions = days.reduce((sum, day) => sum + day.contributionCount, 0);
+
+  return {
+    user: {
+      login: user.login,
+      name: user.name,
+      contributionsCollection: {
+        contributionCalendar: {
+          totalContributions,
+          weeks: chunkDaysIntoWeeks(days),
+        },
+      },
+    },
+  };
 }
 
 function buildStats(payload, since) {
@@ -389,6 +472,25 @@ function currentIsoDate(value) {
   return value.toISOString().slice(0, 10);
 }
 
+function startOfUtcDay(value) {
+  const date = new Date(value);
+  return new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
+}
+
+function endOfApiWindow(start, maxEnd) {
+  const candidateEnd = new Date(start);
+  candidateEnd.setUTCFullYear(candidateEnd.getUTCFullYear() + 1);
+  candidateEnd.setUTCDate(candidateEnd.getUTCDate() - 1);
+
+  return candidateEnd < maxEnd ? candidateEnd : new Date(maxEnd);
+}
+
+function addUtcDays(value, amount) {
+  const next = new Date(value);
+  next.setUTCDate(next.getUTCDate() + amount);
+  return next;
+}
+
 function isDateInRange(date, start, end) {
   return date >= start && date <= end;
 }
@@ -402,7 +504,11 @@ function escapeXml(value) {
     .replaceAll("'", "&apos;");
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+const isDirectRun = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+
+if (isDirectRun) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}
