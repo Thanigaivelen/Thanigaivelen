@@ -1,16 +1,53 @@
-## Hi there 👋
+# Hi 👋, I'm Thanigaivelen
 
-<!--
-**Thanigaivelen/Thanigaivelen** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+🚀 Full Stack Developer
+💻 Go | Node.js | TypeScript | React | AWS
+🤖 Building AI Agents & Voice AI Applications
+☁️ Cloud & Microservices Enthusiast
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## About Me
+
+- 🔭 Currently building AI-powered applications
+- 🌱 Learning AWS Cognito & Microservice Architecture
+- 💬 Ask me about Go, Retool, AWS, GraphQL, OpenAI
+- ⚡ Fun fact: I love turning ideas into products
+
+---
+
+## Tech Stack
+
+### Languages
+Go • TypeScript • JavaScript • Python • SQL
+
+### Frontend
+React • Next.js • Tailwind CSS
+
+### Backend
+Go • Node.js • GraphQL • PostgreSQL
+
+### Cloud
+AWS • Docker • Kubernetes • Terraform
+
+---
+
+## GitHub Stats
+
+[GitHub stats card]
+
+## Streak Stats
+
+[GitHub streak card]
+
+## Activity Graph
+
+[GitHub activity graph]
+
+---
+
+## Connect With Me
+
+LinkedIn
+Portfolio
+Email
