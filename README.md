@@ -41,15 +41,22 @@ I care about products that feel **simple on the surface** and **solid underneath
 
 ---
 
-## GitHub Stats
+## GitHub Signals
 
 <div align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=Thanigaivelen&show_icons=true&include_all_commits=true&rank_icon=github&theme=tokyonight&hide_border=true&bg_color=00000000" alt="GitHub stats" />
-  <img height="170" src="https://streak-stats.demolab.com?user=Thanigaivelen&theme=tokyonight&hide_border=true&background=00000000" alt="GitHub streak" />
+  <img src="./github-signals.svg" width="100%" alt="GitHub activity snapshot" />
 </div>
 
+<p align="center">
+  Auto-generated daily with GitHub Actions.
+</p>
+
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Thanigaivelen&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000" alt="Top languages" />
+  <a href="https://github.com/Thanigaivelen?tab=repositories">repositories</a>
+  |
+  <a href="https://portfolio-vercel-tau-seven.vercel.app/">portfolio</a>
+  |
+  <a href="https://github.com/Thanigaivelen">profile</a>
 </div>
 
 ---

@@ -1,0 +1,98 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="34" y1="24" x2="1168" y2="338" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111D"/>
+      <stop offset="0.55" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <filter id="softGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="cardShadow" x="-20%" y="-30%" width="140%" height="180%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#020617" flood-opacity="0.38"/>
+    </filter>
+    <style>
+      .eyebrow { font: 700 11px 'Segoe UI', Arial, sans-serif; fill: #53D4FF; letter-spacing: 2.6px; }
+      .title { font: 700 30px 'Segoe UI', Arial, sans-serif; fill: #F8FAFC; letter-spacing: 0.2px; }
+      .subtitle { font: 500 14px 'Segoe UI', Arial, sans-serif; fill: #94A3B8; }
+      .status { font: 600 12px 'Segoe UI', Arial, sans-serif; fill: #20C997; letter-spacing: 1.6px; }
+      .card { fill: rgba(8,17,29,0.88); stroke: rgba(148,163,184,0.18); stroke-width: 1; }
+      .label { font: 600 12px 'Segoe UI', Arial, sans-serif; fill: #7DD3FC; letter-spacing: 2px; }
+      .value { font: 700 44px 'Segoe UI', Arial, sans-serif; fill: #F8FAFC; }
+      .caption { font: 600 18px 'Segoe UI', Arial, sans-serif; fill: #E2E8F0; }
+      .meta { font: 500 14px 'Segoe UI', Arial, sans-serif; fill: #94A3B8; }
+      .fine { font: 600 12px 'Segoe UI', Arial, sans-serif; fill: #20C997; letter-spacing: 1.6px; }
+      .line { stroke: rgba(83,212,255,0.28); stroke-width: 2; fill: none; }
+      .lineWarm { stroke: rgba(124,155,255,0.34); stroke-width: 2; fill: none; }
+      .lineMint { stroke: rgba(32,201,151,0.32); stroke-width: 2; fill: none; }
+    </style>
+    <path id="cardPathA" d="M 154 246 C 202 226 244 236 290 214 C 330 196 364 208 410 182"/>
+    <path id="cardPathB" d="M 454 246 C 498 204 554 258 612 190 C 638 160 672 174 710 150"/>
+    <path id="cardPathC" d="M 754 246 C 790 232 842 236 888 206 C 932 178 980 182 1038 146"/>
+  </defs>
+
+  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <circle cx="184" cy="56" r="2.6" fill="#53D4FF"/>
+  <circle cx="1038" cy="74" r="2.2" fill="#20C997"/>
+  <circle cx="1092" cy="300" r="2.4" fill="#7C9BFF"/>
+  <circle cx="110" cy="294" r="2.1" fill="#20C997"/>
+
+  <g>
+    <text x="74" y="54" class="eyebrow">PROFILE SIGNALS</text>
+    <text x="74" y="92" class="title">GitHub Signals</text>
+    <text x="74" y="118" class="subtitle">Auto-generated from Thanigaivelen's public GitHub activity</text>
+    <text x="928" y="54" class="status">UPDATED JUN 29, 2026</text>
+  </g>
+
+  <g filter="url(#cardShadow)">
+    <rect x="74" y="148" width="326" height="156" rx="22" class="card"/>
+    <rect x="437" y="148" width="326" height="156" rx="22" class="card"/>
+    <rect x="800" y="148" width="326" height="156" rx="22" class="card"/>
+  </g>
+
+  <g>
+    <text x="104" y="182" class="label">TOTAL CONTRIBUTIONS</text>
+    <text x="104" y="234" class="value">1,904</text>
+    <text x="104" y="262" class="caption">Built over time, not as a vanity metric</text>
+    <text x="104" y="286" class="meta">Since Sep 4, 2021</text>
+    <text x="104" y="304" class="fine">CONSISTENT OUTPUT</text>
+    <path d="M 154 246 C 202 226 244 236 290 214 C 330 196 364 208 410 182" class="line"/>
+    <circle r="5" fill="#53D4FF" filter="url(#softGlow)">
+      <animateMotion dur="7s" repeatCount="indefinite">
+        <mpath href="#cardPathA"/>
+      </animateMotion>
+    </circle>
+  </g>
+
+  <g>
+    <text x="467" y="182" class="label">ACTIVE RUN</text>
+    <text x="467" y="234" class="value">1</text>
+    <text x="467" y="262" class="caption">Latest active day</text>
+    <text x="467" y="286" class="meta">Jun 29, 2026</text>
+    <text x="467" y="304" class="fine">LATEST MOMENTUM</text>
+    <path d="M 454 246 C 498 204 554 258 612 190 C 638 160 672 174 710 150" class="lineWarm"/>
+    <circle r="5" fill="#7C9BFF" filter="url(#softGlow)">
+      <animateMotion dur="5.5s" repeatCount="indefinite">
+        <mpath href="#cardPathB"/>
+      </animateMotion>
+    </circle>
+  </g>
+
+  <g>
+    <text x="830" y="182" class="label">BEST RUN</text>
+    <text x="830" y="234" class="value">8</text>
+    <text x="830" y="262" class="caption">Strongest streak on record</text>
+    <text x="830" y="286" class="meta">Dec 11, 2025 - Dec 18, 2025</text>
+    <text x="830" y="304" class="fine">STRONGEST WINDOW</text>
+    <path d="M 754 246 C 790 232 842 236 888 206 C 932 178 980 182 1038 146" class="lineMint"/>
+    <circle r="5" fill="#20C997" filter="url(#softGlow)">
+      <animateMotion dur="6.4s" repeatCount="indefinite">
+        <mpath href="#cardPathC"/>
+      </animateMotion>
+    </circle>
+  </g>
+</svg>

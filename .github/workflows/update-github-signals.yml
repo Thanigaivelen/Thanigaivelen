@@ -1,0 +1,43 @@
+name: Update GitHub Signals
+
+on:
+  schedule:
+    - cron: "21 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-signals:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Generate GitHub signals SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: Thanigaivelen
+          GITHUB_SINCE: 2021-09-04
+        run: node scripts/generate-github-signals.mjs
+
+      - name: Commit updated asset if it changed
+        shell: bash
+        run: |
+          if git diff --quiet github-signals.svg; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add github-signals.svg
+          git commit -m "chore: refresh github signals"
+          git push
