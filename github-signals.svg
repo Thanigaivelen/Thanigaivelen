@@ -45,7 +45,7 @@
     <text x="74" y="54" class="eyebrow">PROFILE SIGNALS</text>
     <text x="74" y="92" class="title">GitHub Signals</text>
     <text x="74" y="118" class="subtitle">Auto-generated from Bobby's public GitHub activity</text>
-    <text x="928" y="54" class="status">UPDATED JUL 29, 2026</text>
+    <text x="928" y="54" class="status">UPDATED JUL 30, 2026</text>
   </g>
 
   <g filter="url(#cardShadow)">
@@ -56,7 +56,7 @@
 
   <g>
     <text x="104" y="182" class="label">TOTAL CONTRIBUTIONS</text>
-    <text x="104" y="234" class="value">2,047</text>
+    <text x="104" y="234" class="value">2,052</text>
     <text x="104" y="262" class="caption">Built over time, not as a vanity metric</text>
     <text x="104" y="286" class="meta">Since Sep 4, 2021</text>
     <text x="104" y="304" class="fine">CONSISTENT OUTPUT</text>
@@ -70,9 +70,9 @@
 
   <g>
     <text x="467" y="182" class="label">ACTIVE RUN</text>
-    <text x="467" y="234" class="value">4</text>
-    <text x="467" y="262" class="caption">Most recent streak window</text>
-    <text x="467" y="286" class="meta">Jul 20, 2026 - Jul 23, 2026</text>
+    <text x="467" y="234" class="value">1</text>
+    <text x="467" y="262" class="caption">Latest active day</text>
+    <text x="467" y="286" class="meta">Jul 29, 2026</text>
     <text x="467" y="304" class="fine">LATEST MOMENTUM</text>
     <path d="M 454 246 C 498 204 554 258 612 190 C 638 160 672 174 710 150" class="lineWarm"/>
     <circle r="5" fill="#7C9BFF" filter="url(#softGlow)">
